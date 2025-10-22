@@ -1,0 +1,63 @@
+/* Simulación del contenedor de un teléfono */
+.mobile-container {
+  max-width: 390px;
+  width: 100%;
+  height: 844px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo para los headers de las pantallas */
+.sticky-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Evita que el header se encoja */
+}
+
+/* Estilo para los footers fijos */
+.sticky-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom)); /* Para notch de iPhone */
+  flex-shrink: 0; /* Evita que el footer se encoja */
+}
+
+/* Estilo para los botones de opción (Tamaño, Leche, etc.) */
+.option-label {
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  display: block;
+}
+
+.option-label:hover {
+  background-color: #f9fafb;
+}
+
+.option-input {
+  display: none; /* Oculta el radio button real */
+}
+
+.option-input:checked + .option-label {
+  background-color: #634133; /* Color café */
+  color: #ffffff;
+  border-color: #634133;
+}
+
+/* Cada "pantalla" debe poder hacer scroll si el contenido es muy largo */
+/* 'main' es usado como el contenedor de scroll en la mayoría de las pantallas */
+main {
+  flex-grow: 1;
+  overflow-y: auto;
+}
